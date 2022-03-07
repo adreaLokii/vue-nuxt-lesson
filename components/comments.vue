@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div>
+        <div id="comments">
             <input @submit.prevent type="text" class="comments__input" placeholder="Введите комментарий">
             <button class="comments__btn" @click="pushUsers()">Отправить</button>
         </div>

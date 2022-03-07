@@ -15,7 +15,7 @@
                 </a>
             </div>
             <ul class="navbar__links" >
-                <li v-for="titles in title" :key="titles.id"><a href="#">{{ titles.title }}</a></li>
+                <li v-for="titles in title" :key="titles.id"><a :href="titles.href">{{ titles.title }}</a></li>
             </ul>
     </header>
 </template>
@@ -33,9 +33,8 @@ export default {
         instagram,
         twitter,
         title: [
-            {id: 1, title: "Главная"},
-            {id: 2, title: 'Комментарии'},
-            {id: 3, title: 'Связь'}
+            {id: 1, title: "Главная", href: '#'},
+            {id: 2, title: 'Комментарии', href: '#comments'}
         ]
 }),
  
@@ -44,28 +43,10 @@ export default {
 </script>
 
 <style lang='scss'>
-@media (max-width: 770px){
-    .navbar__links{
-        li{
-            font-size: 16px;
-            a{
-                color: #fff;
-            }
-            padding: 10px;   
-        }
-    }
-        .logo.social{
-            width: 50px;
-            height: 50px;
-        }
-        .logo{
-            width: 50px;
-            height: 50px;
-        }
-}
+
 .logo{
-    max-width: 80px;
-    max-height: 80px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
 }
 
@@ -111,5 +92,25 @@ export default {
         padding: 10px;
         
     }
+}
+
+@media (max-width: 770px){
+    .navbar__links{
+        li{
+            font-size: 16px;
+            a{
+                color: #fff;
+            }
+            padding: 10px;   
+        }
+    }
+        .logo.social{
+            width: 50px;
+            height: 50px;
+        }
+        .logo{
+            width: 50px;
+            height: 50px;
+        }
 }
 </style>
